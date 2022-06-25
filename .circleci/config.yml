@@ -16,8 +16,6 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - requires:
-          - print-hello
       - run:
           name: "Say world"
           command: "echo World"
@@ -26,4 +24,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - print-hello
-      - print-world
+      - print-world:
+          requires:
+            - print-hello
