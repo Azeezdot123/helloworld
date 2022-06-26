@@ -8,7 +8,7 @@ jobs:
     steps:
       - run:
           name: Save Output
-          command: echo "Hello World" > output.txt
+          command: echo "Hello World" > ~/output.txt
       - persist_to_workspace:
           root: ~/
           paths:
